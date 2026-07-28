@@ -27,7 +27,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
 
 <!-- ═══════════════════════════════════════════════
-     ROSE BRANCH SVG SPRITE  (hidden, referenced via <use>)
+     ROSE BRANCH SVG SPRITE
 ═══════════════════════════════════════════════ -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
   <defs>
@@ -40,11 +40,9 @@
       <stop offset="100%" stop-color="#7a3b46" stop-opacity="0"/>
     </radialGradient>
     <g id="mag">
-      <!-- branch -->
       <path d="M30 480 Q120 380 220 310 Q310 250 400 190 Q470 140 560 90" stroke="#a97a52" stroke-width="9" fill="none" stroke-linecap="round"/>
       <path d="M180 340 Q140 290 100 240 Q75 210 50 170" stroke="#a97a52" stroke-width="6" fill="none" stroke-linecap="round"/>
       <path d="M360 210 Q390 170 430 120" stroke="#96683f" stroke-width="5" fill="none" stroke-linecap="round"/>
-      <!-- leaves (gold / champagne foliage to match the wedding palette) -->
       <ellipse cx="460" cy="170" rx="72" ry="28" fill="#c9a24c" transform="rotate(-30 460 170)" opacity="0.85"/>
       <ellipse cx="460" cy="170" rx="72" ry="28" fill="url(#lg1)" transform="rotate(-30 460 170)" opacity="0.6"/>
       <ellipse cx="390" cy="230" rx="65" ry="24" fill="#b8894a" transform="rotate(15 390 230)" opacity="0.82"/>
@@ -59,7 +57,6 @@
       <ellipse cx="180" cy="370" rx="55" ry="20" fill="#b8894a" transform="rotate(20 180 370)" opacity="0.7"/>
       <ellipse cx="490" cy="100" rx="38" ry="14" fill="#d9be95" transform="rotate(-20 490 100)" opacity="0.65"/>
       <ellipse cx="130" cy="410" rx="50" ry="18" fill="#c9a24c" transform="rotate(40 130 410)" opacity="0.62"/>
-      <!-- rose 1 -->
       <g transform="translate(340,195)">
         <ellipse cx="0" cy="-46" rx="24" ry="46" fill="#d88c9a" opacity="0.92" transform="rotate(0)"/>
         <ellipse cx="0" cy="-46" rx="24" ry="46" fill="#d88c9a" opacity="0.92" transform="rotate(51.4)"/>
@@ -74,7 +71,6 @@
         <circle cx="0" cy="0" r="14" fill="#f6e2c2" opacity="0.95"/>
         <circle cx="0" cy="0" r="8"  fill="#b8894a" opacity="0.88"/>
       </g>
-      <!-- rose 2 -->
       <g transform="translate(130,255) scale(0.82)">
         <ellipse cx="0" cy="-44" rx="22" ry="44" fill="#e2a3ae" opacity="0.9" transform="rotate(0)"/>
         <ellipse cx="0" cy="-44" rx="22" ry="44" fill="#e2a3ae" opacity="0.9" transform="rotate(51.4)"/>
@@ -86,7 +82,6 @@
         <circle cx="0" cy="0" r="13" fill="#f6e2c2" opacity="0.95"/>
         <circle cx="0" cy="0" r="7"  fill="#b8894a" opacity="0.85"/>
       </g>
-      <!-- bud -->
       <g transform="translate(490,125) scale(0.65) rotate(-20)">
         <ellipse cx="0" cy="-38" rx="17" ry="40" fill="#eec3ca" opacity="0.85" transform="rotate(0)"/>
         <ellipse cx="0" cy="-38" rx="17" ry="40" fill="#eec3ca" opacity="0.85" transform="rotate(72)"/>
@@ -96,22 +91,21 @@
         <circle cx="0" cy="0" r="11" fill="#d9be95" opacity="0.9"/>
       </g>
     </g>
-    <!-- mirrored -->
     <g id="mag-r" transform="scale(-1,1) translate(-600,0)"><use href="#mag"/></g>
   </defs>
 </svg>
 
 <style>
 /* ═══════════════════════════════
-   BASE — ROSE SAUMON / CHAMPAGNE / GOLD PALETTE
+   BASE & PALETTE
 ═══════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --cream:#faf1e6; --ivory:#fdf6f0;
-  --gd:#7a3b46;      /* deep rosewood — dark section bg */
-  --gm:#b8894a;      /* bronze gold — accents / labels */
-  --gl:#d89591;       /* rose saumon */
-  --gp:#f3dee1;       /* pale rose — lines */
+  --gd:#7a3b46;      
+  --gm:#b8894a;      
+  --gl:#d89591;       
+  --gp:#f3dee1;       
   --gold:#c9a24c;
   --rose-pale:#f8ecee;
   --td:#33313a; --tm:#55525c; --tl:#8a8390;
@@ -151,7 +145,7 @@ body{background:var(--cream);color:var(--td);font-family:'Cormorant Garamond',se
 .sf.mr{animation:fltF 8s   cubic-bezier(.45,.05,.24,1.15) infinite 1.5s}
 
 /* ═══════════════════════════════
-   FLOATING HEARTS — ROMANTIC AMBIENT LAYER
+   FLOATING HEARTS
 ═══════════════════════════════ */
 #hearts-canvas{position:fixed;inset:0;z-index:5;pointer-events:none;overflow:hidden}
 .heart-particle{position:absolute;bottom:-6vh;line-height:1;will-change:transform,opacity;filter:drop-shadow(0 2px 5px rgba(122,59,70,.18));animation:heartFloat linear infinite}
@@ -188,16 +182,13 @@ body{background:var(--cream);color:var(--td);font-family:'Cormorant Garamond',se
 .env-mag.bl{bottom:-10px;left:-10px;width:clamp(160px,28vw,250px);opacity:.45;transform:rotate(160deg) scaleX(-1)}
 
 /* ═══════════════════════════════
-   MAIN PAGE
+   MAIN PAGE & ANIMATIONS
 ═══════════════════════════════ */
 #main{opacity:0;transition:opacity 1s ease .3s;position:relative;z-index:2}
 #main.visible{opacity:1}
 section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);overflow:hidden}
 .inner{max-width:760px;margin:0 auto;position:relative;z-index:2}
 
-/* ═══════════════════════════════
-   ★ ANIMATIONS ★
-═══════════════════════════════ */
 .ch{display:inline-block;opacity:0;transform:translateY(60px) rotate(3deg);transition:opacity .5s ease, transform .5s ease}
 .ch.in{opacity:1;transform:translateY(0) rotate(0deg)}
 .ch-space{display:inline-block;width:.28em}
@@ -226,7 +217,17 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
    HERO
 ═══════════════════════════════ */
 .hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(80px,10vw,120px) clamp(20px,5vw,60px);overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(243,222,225,.35) 0%,transparent 70%),var(--cream)}
-.hero-label{font-family:'Cinzel',serif;font-size:clamp(.55rem,1.5vw,.72rem);letter-spacing:.35em;color:var(--gm);text-transform:uppercase;margin-bottom:1.2rem;position:relative;z-index:2}
+/* Increased font size for hero-label */
+.hero-label {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.85rem, 2.5vw, 1.2rem); /* Increased size */
+  letter-spacing: .35em;
+  color: var(--gm);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 2;
+}
 .hero-amp{font-style:italic;font-size:clamp(2.6rem,6.5vw,4.2rem);color:var(--gd);line-height:.9;margin-bottom:.2rem;position:relative;z-index:2;opacity:0;transform:scale(.6) rotate(-10deg);transition:opacity .8s ease,transform .8s ease}
 .hero-amp.in{opacity:1;transform:scale(1) rotate(0deg)}
 .hero-names{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:400;color:var(--gm);line-height:1.15;text-align:center;letter-spacing:-.01em;position:relative;z-index:2;font-style:italic}
@@ -234,7 +235,18 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 .hero-names .name2{display:block}
 .hero-tagline{font-style:italic;color:var(--gd);font-size:clamp(1.1rem,2.8vw,1.5rem);text-align:center;margin-top:1.4rem;position:relative;z-index:2;opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
 .hero-tagline.in{opacity:1;transform:translateY(0)}
-.hero-intro{font-size:clamp(.78rem,1.7vw,.9rem);color:var(--tm);text-align:center;max-width:420px;margin:1rem auto 0;line-height:1.7;position:relative;z-index:2}
+/* Made hero-intro black (#000) and bold */
+.hero-intro {
+  font-size: clamp(.78rem, 1.7vw, .9rem);
+  color: #000; /* Set to black */
+  font-weight: bold; /* Added bold */
+  text-align: center;
+  max-width: 420px;
+  margin: 1rem auto 0;
+  line-height: 1.7;
+  position: relative;
+  z-index: 2;
+}
 .hero-date-band{margin-top:2.2rem;display:flex;align-items:center;gap:clamp(1rem,3vw,2.2rem);position:relative;z-index:2;flex-wrap:wrap;justify-content:center;text-align:center}
 .hero-date-band span{font-family:'Cinzel',serif;font-size:clamp(.7rem,1.8vw,.85rem);letter-spacing:.25em;color:var(--gd);line-height:1.4}
 .day-num-col{display:flex;flex-direction:column;align-items:center;gap:.15rem}
@@ -246,10 +258,20 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 .hero-scroll-cue span{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.3em;color:#000}
 .scroll-arrow{width:20px;height:20px;border-right:1px solid var(--gl);border-bottom:1px solid var(--gl);transform:rotate(45deg);animation:bounce-arrow 1.5s ease-in-out infinite}
 @keyframes bounce-arrow{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
-.sec-title{font-family:'Cinzel',serif;font-size:clamp(.7rem,2vw,.85rem);letter-spacing:.4em;color:#000;text-align:center;margin-bottom:3rem;text-transform:uppercase}
+/* Ensured sec-title is black and bold */
+.sec-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.7rem, 2vw, .85rem);
+  letter-spacing: .4em;
+  color: #000; /* Ensured black */
+  font-weight: bold; /* Added bold */
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
 
 /* ═══════════════════════════════
-   INVITATION CARD SECTION
+   INVITATION FORMELLE
 ═══════════════════════════════ */
 .invite-section{background:var(--ivory)}
 .invite-title{font-family:'Cinzel',serif;font-size:clamp(1rem,2.5vw,1.3rem);letter-spacing:.4em;color:var(--gm);text-align:center;text-transform:uppercase;margin-bottom:1rem}
@@ -302,7 +324,6 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 .swatch-name.in{opacity:1}
 @keyframes swatchRing{0%{box-shadow:0 0 0 0px rgba(255,255,255,.6)}100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
 .swatch:hover{animation:swatchRing .6s ease-out}
-
 .theme-name{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.6rem,4vw,2.3rem);color:var(--gd);margin-bottom:2.5rem}
 
 .dresscode-card{border-radius:6px;overflow:hidden;position:relative;padding:clamp(2rem,4vw,3rem) clamp(1.6rem,3.5vw,2.6rem);max-width:520px;margin:0 auto;opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;
@@ -341,21 +362,80 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 .cal-link:hover{border-color:#000}
 
 /* ═══════════════════════════════
-   RSVP / CONFIRM / GUESTBOOK
+   CUSTOM HTML FORMS (RSVP & VOEUX)
 ═══════════════════════════════ */
-.guestbook-section{background:var(--ivory)}
-.guestbook-form{max-width:560px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1rem}
-.form-field input,.form-field textarea{width:100%;background:var(--cream);border:1px solid rgba(216,149,145,.3);border-bottom:2px solid rgba(216,149,145,.4);padding:1rem 1.2rem;font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--td);outline:none;transition:border-color .3s ease;resize:none;-webkit-appearance:none;border-radius:0}
-.form-field input:focus,.form-field textarea:focus{border-color:var(--gm);background:white}
-.form-field input::placeholder,.form-field textarea::placeholder{color:var(--tl);font-style:italic}
-.form-field textarea{min-height:120px}
-.submit-btn{align-self:center;padding:1rem 3rem;background:var(--gd);color:var(--ivory);border:none;cursor:pointer;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;transition:background .3s ease,transform .2s ease;margin-top:.5rem}
-.submit-btn:hover{background:var(--gl);transform:translateY(-2px)}
-.confirm-btn-wrap{text-align:center;margin-top:3rem}
-.confirm-btn{display:inline-block;padding:1rem 3.5rem;background:var(--gd);color:var(--ivory);border:none;cursor:pointer;font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;transition:all .3s ease;position:relative;overflow:hidden}
-.confirm-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 49%,rgba(255,255,255,.08) 50%,transparent 51%);transform:translateX(-100%);transition:transform .6s ease}
-.confirm-btn:hover::before{transform:translateX(100%)}
-.confirm-btn:hover{background:var(--gl);transform:translateY(-2px);box-shadow:0 8px 20px rgba(122,59,70,.2)}
+.rsvp-section, .voeux-section {
+    background: var(--ivory);
+    position: relative;
+    z-index: 2;
+}
+.voeux-section {
+    background: var(--cream); /* Slight contrast from RSVP */
+}
+.custom-form {
+    max-width: 540px;
+    margin: 2rem auto 0;
+    background: #ffffff;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border-radius: 6px;
+    border: 1px solid rgba(216,149,145,.3);
+    box-shadow: 0 10px 30px rgba(122,59,70,.06);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.form-label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--td);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+}
+.form-input, .form-textarea, .form-select {
+    width: 100%;
+    padding: 0.9rem;
+    border: 1px solid rgba(216,149,145,.4);
+    border-radius: 4px;
+    background: var(--cream);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--td);
+    transition: all 0.3s ease;
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus {
+    outline: none;
+    border-color: var(--gd);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(122,59,70,.1);
+}
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.form-submit {
+    display: block;
+    width: 100%;
+    padding: 1.1rem;
+    margin-top: 2rem;
+    background: var(--gd);
+    color: var(--ivory);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+.form-submit:hover {
+    background: var(--gl);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(122,59,70,.2);
+}
 
 .rsvp-note{max-width:480px;margin:2.4rem auto 0;text-align:center;padding:1.6rem 1.4rem;background:var(--rose-pale);border:1px solid rgba(216,149,145,.25);border-radius:4px}
 .rsvp-note .phone-icon{font-size:1.3rem;margin-bottom:.6rem;display:block}
@@ -370,8 +450,6 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 .footer-names{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.5rem);font-style:italic;font-weight:300;color:var(--ivory);margin-bottom:1rem;line-height:1.1;position:relative;z-index:2}
 .footer-date{font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.4em;color:var(--gp);margin-bottom:2rem;position:relative;z-index:2;line-height:1.6}
 .footer-message{font-style:italic;font-size:clamp(.9rem,2vw,1.1rem);color:var(--gp);max-width:420px;margin:0 auto;line-height:1.7;opacity:.85;position:relative;z-index:2}
-.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--gd);color:var(--ivory);padding:.8rem 2rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;border-radius:2px;box-shadow:0 8px 24px rgba(0,0,0,.2);transition:transform .4s ease;z-index:2000;white-space:nowrap}
-.toast.show{transform:translateX(-50%) translateY(0)}
 </style>
 </head>
 <body>
@@ -476,7 +554,6 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
       <div class="ornament" data-anim="ornament"><div class="ornament-line"></div><span class="ornament-heart">♥</span><div class="ornament-line reverse"></div></div>
       <p class="sec-title line-up">Programme du Jour</p>
       <p class="reception-headline line-up">SAMEDI 29 AOÛT 2026</p>
-
       <div class="reception-info-grid">
         <div class="info-cell t-cell">
           <span class="info-icon">💍</span>
@@ -528,7 +605,7 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
     </div>
   </section>
 
-  <!-- ── THÈME & DRESS CODE ── -->
+  <!-- ── THEME & DRESS CODE ── -->
   <section class="theme-section">
     <svg class="sf tl" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag"/></svg>
     <svg class="sf tr" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag-r"/></svg>
@@ -542,7 +619,7 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
       <p class="palette-title line-up" style="transition-delay:.2s">La Palette des Couleurs</p>
       <div class="palette-row" id="paletteRow">
         <div class="swatch-wrap">
-          <div class="swatch" style="background:#d88c9a;transition-delay:.05s"></div>
+          <div class="swatch" style="background:#ff7e70;transition-delay:.05s"></div>
           <span class="swatch-name">Rose Saumon</span>
         </div>
         <div class="swatch-wrap">
@@ -586,33 +663,74 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
         <div class="cal-grid" id="calGrid"></div>
       </div>
       <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mariage+Sonia+Emilie+et+Simon+Pierre&dates=20260829T100000/20260830T020000&details=C%C3%A9r%C3%A9monie+civile+%C3%A0+10h+%2C+B%C3%A9n%C3%A9diction+nuptiale+%C3%A0+14h+%2C+Soir%C3%A9e+dansante+%C3%A0+20h+%C3%A0+Mbalmayo.&location=Mbalmayo" target="_blank" class="cal-link line-up" style="transition-delay:.4s">+ Ajouter au calendrier</a>
-      <div class="confirm-btn-wrap line-up" style="transition-delay:.55s">
-        <button class="confirm-btn" id="confirmBtn">CONFIRMER MA PRÉSENCE</button>
-      </div>
-      <div class="rsvp-note fade-sc" style="transition-delay:.7s">
-        <span class="phone-icon">📞</span>
-        <p>Un petit imprévu vous empêche d'être parmi nous&nbsp;?<br>
-        Merci de nous le signaler avant le <b>22 Août</b> au :<br>
-        <a href="tel:+237699430720">699 430 720</a> ou <a href="tel:+237695923025">695 923 025</a></p>
-      </div>
     </div>
   </section>
 
-  <!-- ── GUESTBOOK ── -->
-  <section class="guestbook-section">
+  <!-- ── RSVP SECTION ── -->
+  <section class="rsvp-section" id="rsvp">
     <svg class="sf tl" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag"/></svg>
     <svg class="sf tr" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag-r"/></svg>
     <div class="inner">
       <div class="ornament" data-anim="ornament"><div class="ornament-line"></div><span class="ornament-heart">♥</span><div class="ornament-line reverse"></div></div>
+      <p class="sec-title line-up">Confirmez votre présence</p>
+      
+      <!-- RSVP FORM -->
+      <form class="custom-form fade-sc" style="transition-delay:.2s" action="https://formsubmit.co/francisryxn@gmail.com" method="POST">
+        <!-- Hidden field for the email subject -->
+        <input type="hidden" name="_subject" value="Nouveau RSVP pour le Mariage !">
+        
+        <div class="form-group">
+            <label class="form-label" for="guestName">Nom & Prénom</label>
+            <input type="text" id="guestName" name="guestName" class="form-input" placeholder="Ex: Jean Dupont" required>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label" for="attendance">Serez-vous présent(e) ?</label>
+            <select id="attendance" name="attendance" class="form-select" required>
+                <option value="" disabled selected>Veuillez choisir...</option>
+                <option value="yes">Oui, avec grand plaisir !</option>
+                <option value="no">Non, je ne pourrai pas être là</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="guestCount">Nombre de personnes</label>
+            <input type="number" id="guestCount" name="guestCount" class="form-input" min="1" max="10" placeholder="1">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="dietary">Restrictions alimentaires (Optionnel)</label>
+            <textarea id="dietary" name="dietary" class="form-textarea" placeholder="Végétarien, sans gluten, allergies..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Confirmer ma présence</button>
+      </form>
+
+  <!-- ── VOEUX / LIVRE D'OR SECTION ── -->
+  <section class="voeux-section" id="livre-dor">
+    <svg class="sf bl" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag"/></svg>
+    <svg class="sf br" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag-r"/></svg>
+    <div class="inner">
+      <div class="ornament" data-anim="ornament"><div class="ornament-line"></div><span class="ornament-heart">♥</span><div class="ornament-line reverse"></div></div>
       <p class="sec-title line-up">Livre d'Or</p>
-      <div class="guestbook-form fade-sc" style="transition-delay:.2s">
-        <div class="form-field"><input type="text" id="guestName" placeholder="Entrez votre nom *" autocomplete="name"/></div>
-        <div class="form-field"><textarea id="guestMessage" placeholder="Entrez vos vœux *"></textarea></div>
-        <button class="submit-btn" id="submitWish">ENVOYER UN VŒU</button>
-      </div>
-      <div id="wishes-list" style="max-width:560px;margin:2rem auto 0"></div>
-    </div>
-  </section>
+      
+      <!-- VOEUX FORM -->
+      <form class="custom-form fade-sc" style="transition-delay:.2s" action="https://formsubmit.co/francisryxan@gmail.com" method="POST">
+        <!-- Hidden field for the email subject -->
+        <input type="hidden" name="_subject" value="Nouveau Voeu (Livre d'Or) !">
+        
+        <div class="form-group">
+            <label class="form-label" for="voeuxName">Votre Nom</label>
+            <input type="text" id="voeuxName" name="voeuxName" class="form-input" placeholder="Ex: Famille Mebara" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="voeuxMessage">Laissez-nous un petit mot</label>
+            <textarea id="voeuxMessage" name="voeuxMessage" class="form-textarea" placeholder="Tous nos vœux de bonheur..." required></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Envoyer mes vœux</button>
+      </form>
 
   <!-- ── FOOTER ── -->
   <footer class="footer">
@@ -624,8 +742,6 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
   </footer>
 
 </div>
-
-<div class="toast" id="toast"></div>
 
 <!-- ═══════════════════════════════════════════════
      SCRIPTS
@@ -793,11 +909,11 @@ envWrap.addEventListener('click', openEnvelope);
 document.body.style.overflow = 'hidden';
 
 /* ─────────────────────────────────────────
-   DYNAMIC CALENDAR — AOÛT 2026 (Aug 1 = Saturday)
+   DYNAMIC CALENDAR
 ───────────────────────────────────────── */
 function buildCalendar() {
   const grid = document.getElementById('calGrid');
-  for (let i = 0; i < 5; i++) {          // Lu,Ma,Me,Je,Ve empty — Aug 1 2026 is a Saturday
+  for (let i = 0; i < 5; i++) {
     const c = document.createElement('div');
     c.className = 'cal-cell empty';
     grid.appendChild(c);
@@ -812,7 +928,7 @@ function buildCalendar() {
 buildCalendar();
 
 /* ─────────────────────────────────────────
-   COUNTDOWN — TARGET: 29 AOÛT 2026, 10H00
+   COUNTDOWN
 ───────────────────────────────────────── */
 const cdEls = {
   days: document.getElementById('cd-days'),
@@ -867,49 +983,6 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 /* ─────────────────────────────────────────
-   CONFIRM RSVP
-───────────────────────────────────────── */
-document.getElementById('confirmBtn').addEventListener('click', function() {
-  this.textContent = '✓ PRÉSENCE CONFIRMÉE';
-  this.style.background = 'var(--gl)';
-  this.style.pointerEvents = 'none';
-  showToast('Votre présence a été confirmée ! Merci 🌸');
-});
-
-/* ─────────────────────────────────────────
-   GUESTBOOK
-───────────────────────────────────────── */
-const wishes = [];
-document.getElementById('submitWish').addEventListener('click', () => {
-  const name = document.getElementById('guestName').value.trim();
-  const msg  = document.getElementById('guestMessage').value.trim();
-  if (!name || !msg) { showToast('Veuillez remplir tous les champs.'); return; }
-  wishes.push({ name, msg, time: new Date().toLocaleDateString('fr-FR') });
-  renderWishes();
-  document.getElementById('guestName').value = '';
-  document.getElementById('guestMessage').value = '';
-  showToast('Votre vœu a été envoyé ! Merci ♥');
-});
-function renderWishes() {
-  document.getElementById('wishes-list').innerHTML = wishes.map(w => `
-    <div class="line-up" style="border-top:1px solid rgba(216,149,145,.2);padding:1.2rem 0;margin-top:.5rem">
-      <div style="font-family:'Cinzel',serif;font-size:.7rem;letter-spacing:.2em;color:#000;margin-bottom:.4rem">${w.name} · ${w.time}</div>
-      <div style="font-style:italic;color:var(--tm);font-size:1rem;line-height:1.6">"${w.msg}"</div>
-    </div>`).join('');
-  document.querySelectorAll('#wishes-list .line-up').forEach(el => setTimeout(() => el.classList.add('in'), 50));
-}
-
-/* ─────────────────────────────────────────
-   TOAST
-───────────────────────────────────────── */
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-/* ─────────────────────────────────────────
    PALETTE SWATCH ANIMATION
 ───────────────────────────────────────── */
 (function() {
@@ -927,7 +1000,7 @@ function showToast(msg) {
 })();
 
 /* ─────────────────────────────────────────
-   CONFETTI DOTS — THEME SECTION (rose/gold tones)
+   CONFETTI DOTS
 ───────────────────────────────────────── */
 (function() {
   const container = document.getElementById('confetti-container');
@@ -952,8 +1025,7 @@ function showToast(msg) {
 })();
 
 /* ─────────────────────────────────────────
-   FLOATING HEARTS — ROMANTIC AMBIENT ANIMATION
-   (drifts continuously over the whole site)
+   FLOATING HEARTS
 ───────────────────────────────────────── */
 (function() {
   const container = document.createElement('div');
