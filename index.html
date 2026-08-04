@@ -364,13 +364,10 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
 /* ═══════════════════════════════
    CUSTOM HTML FORMS (RSVP & VOEUX)
 ═══════════════════════════════ */
-.rsvp-section, .voeux-section {
+.rsvp-section {
     background: var(--ivory);
     position: relative;
     z-index: 2;
-}
-.voeux-section {
-    background: var(--cream); /* Slight contrast from RSVP */
 }
 .custom-form {
     max-width: 540px;
@@ -666,24 +663,24 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
     </div>
   </section>
 
-  <!-- ── RSVP SECTION ── -->
+  <!-- ── RSVP + VOEUX SECTION (COMBINED) ── -->
   <section class="rsvp-section" id="rsvp">
     <svg class="sf tl" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag"/></svg>
     <svg class="sf tr" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag-r"/></svg>
-    <div class="inner">
+    <div class="inner" id="livre-dor">
       <div class="ornament" data-anim="ornament"><div class="ornament-line"></div><span class="ornament-heart">♥</span><div class="ornament-line reverse"></div></div>
       <p class="sec-title line-up">Confirmez votre présence</p>
-      
-      <!-- RSVP FORM -->
+
+      <!-- COMBINED RSVP & VOEUX FORM -->
       <form class="custom-form fade-sc" style="transition-delay:.2s" action="https://formsubmit.co/francisryxn@gmail.com" method="POST">
         <!-- Hidden field for the email subject -->
-        <input type="hidden" name="_subject" value="Nouveau RSVP pour le Mariage !">
-        
+        <input type="hidden" name="_subject" value="Nouveau RSVP & Voeu pour le Mariage !">
+
         <div class="form-group">
             <label class="form-label" for="guestName">Nom & Prénom</label>
             <input type="text" id="guestName" name="guestName" class="form-input" placeholder="Ex: Jean Dupont" required>
         </div>
-        
+
         <div class="form-group">
             <label class="form-label" for="attendance">Serez-vous présent(e) ?</label>
             <select id="attendance" name="attendance" class="form-select" required>
@@ -703,35 +700,12 @@ section{position:relative;padding:clamp(60px,8vw,120px) clamp(20px,8vw,80px);ove
             <textarea id="dietary" name="dietary" class="form-textarea" placeholder="Végétarien, sans gluten, allergies..."></textarea>
         </div>
 
-        <button type="submit" class="form-submit">Confirmer ma présence</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ── VOEUX / LIVRE D'OR SECTION ── -->
-  <section class="voeux-section" id="livre-dor">
-    <svg class="sf bl" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag"/></svg>
-    <svg class="sf br" viewBox="0 0 600 520" xmlns="http://www.w3.org/2000/svg"><use href="#mag-r"/></svg>
-    <div class="inner">
-      <div class="ornament" data-anim="ornament"><div class="ornament-line"></div><span class="ornament-heart">♥</span><div class="ornament-line reverse"></div></div>
-      <p class="sec-title line-up">Livre d'Or</p>
-      
-      <!-- VOEUX FORM -->
-      <form class="custom-form fade-sc" style="transition-delay:.2s" action="https://formsubmit.co/francisryxn@gmail.com" method="POST">
-        <!-- Hidden field for the email subject -->
-        <input type="hidden" name="_subject" value="Nouveau Voeu (Livre d'Or) !">
-        
         <div class="form-group">
-            <label class="form-label" for="voeuxName">Votre Nom</label>
-            <input type="text" id="voeuxName" name="voeuxName" class="form-input" placeholder="Ex: Famille Mebara" required>
+            <label class="form-label" for="voeuxMessage">Laissez-nous un petit mot (Optionnel)</label>
+            <textarea id="voeuxMessage" name="voeuxMessage" class="form-textarea" placeholder="Tous nos vœux de bonheur..."></textarea>
         </div>
 
-        <div class="form-group">
-            <label class="form-label" for="voeuxMessage">Laissez-nous un petit mot</label>
-            <textarea id="voeuxMessage" name="voeuxMessage" class="form-textarea" placeholder="Tous nos vœux de bonheur..." required></textarea>
-        </div>
-
-        <button type="submit" class="form-submit">Envoyer mes vœux</button>
+        <button type="submit" class="form-submit">Confirmer & envoyer mes vœux</button>
       </form>
     </div>
   </section>
